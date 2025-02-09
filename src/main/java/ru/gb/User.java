@@ -13,6 +13,11 @@ public class User {
 
     private final long id;
     private String name;
+    // Конструктор без параметров для Spring
+    public User() {
+        this.id = idCounter++;
+        this.name = "Default Name"; // Можно задать какое-то значение по умолчанию
+    }
 
     // Конструктор с параметрами для десериализации из JSON
     @JsonCreator
